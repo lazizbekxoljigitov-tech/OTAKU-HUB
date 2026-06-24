@@ -45,10 +45,11 @@ function Login() {
     try {
       await api.post("/users", newUser);
       setInput(true);
+      toast.success("Siz qabul qlingingiz");
     } catch (error) {
+      toast.error("server hatosi itlmos, Keyingroq urunb koring !");
       console.log(error.message);
     }
-    toast.success("Siz qabul qlingingiz");
   }
 
   // user get
@@ -68,8 +69,7 @@ function Login() {
       );
 
       if (user) {
-        console.log("Hush kelibsiz");
-        toast.success("Welcome!");
+        navigate("/");
       } else {
         toast.error("Login yoki password noto‘g‘ri");
       }
@@ -80,15 +80,11 @@ function Login() {
 
   // type pastdagla
   const [type, setType] = useState("password");
-  const [input, setInput] = useState();
+  const [input, setInput] = useState(false);
 
-  input
-    ? useEffect(() => {
-        document.title = "OTAKU-HUB | Sing Up";
-      })
-    : useEffect(() => {
-        document.title = "OTAKU-HUB | Login";
-      });
+  useEffect(() => {
+    document.title = input ? "OTAKU-HUB | Sing Up" : "OTAKU-HUB | Login";
+  }, [input]);
 
   return (
     <div className="h-screen flex justify-between  overflow-hidden">
@@ -151,12 +147,15 @@ function Login() {
               <Input
                 Icon={<User size={20} color="white" />}
                 Label={"Enter User Name"}
-                onchange={(e) => setUserName(e.target.value)}
+                onchange={(e) => {
+                  setUserName(e.target.value.toLowerCase().trim());
+                }}
               />
               <Input
                 Icon={<Mail size={20} color="white" />}
                 Label={"Enter Email"}
-                onchange={(e) => setEmail(e.target.value)}
+                type={"email"}
+                onchange={(e) => setEmail(e.target.value.toLowerCase().trim())}
               />
               <Input
                 Icon={<LockKeyhole size={20} color="white" />}
@@ -165,7 +164,7 @@ function Login() {
               <Input
                 Icon={<LockKeyhole size={20} color="white" />}
                 Label={"Enter Password"}
-                onchange={(e) => setPassword(e.target.value)}
+                onchange={(e) => setPassword(e.target.value.toLowerCase().trim())}
                 type={type ? "password" : "text"}
               />
 
@@ -210,12 +209,12 @@ function Login() {
               <Input
                 Icon={<User size={20} color="white" />}
                 Label={"User Name"}
-                onchange={(e) => setUserName(e.target.value)}
+                onchange={(e) => setUserName(e.target.value.toLowerCase().trim())}
               />
               <Input
                 Icon={<LockKeyhole size={20} color="white" />}
                 Label={"Password"}
-                onchange={(e) => setPassword(e.target.value)}
+                onchange={(e) => setPassword(e.target.value.toLowerCase().trim())}
                 type={type ? "password" : "text"}
               />
               <div

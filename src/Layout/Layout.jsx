@@ -1,15 +1,16 @@
 import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 import Navbar from "../components/Navbar/Navbar";
+import Backgraund from "../pages/backgraund/Backgraund"
 function Layout() {
-  console.log("sallomm");
-
   return (
-    <div className="app flex flex-col gap-[100px]">
+    <div className="app">
+      <Backgraund/>
       <Navbar />
-      <div className="mt-[100px]">
+      <div className="mt-[70px]">
         <main className="contenr">
-          <Outlet />
+
+        <Outlet />
         </main>
       </div>
       <Footer />

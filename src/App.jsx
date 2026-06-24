@@ -4,17 +4,29 @@ import { Toaster } from "sonner";
 import Layout from "./Layout/Layout";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login/Login";
-import Top from "./pages/top/Top"
-
+import Luciy from "./pages/luc/Luciy";
+import Top from "./pages/top/Top";
+import Me from "./pages/Me/Me";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
     children: [
-      { index: true, element: <Home /> },
+      {
+        index: true,
+        element: <Home />,
+      },
       {
         path: "top",
-        element:<Top/>
+        element: <Top />,
+      },
+      {
+        path: "random",
+        element: <Luciy />,
+      },
+      {
+        path: "me",
+        element: <Me />,
       },
     ],
   },
@@ -25,7 +37,6 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  console.log("salome");
 
   return (
     <>

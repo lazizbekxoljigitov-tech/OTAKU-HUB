@@ -13,7 +13,7 @@ app.whenReady().then(() => {
     height: 700,
     minHeight: 600,
     minWidth: 1200,
-    icon: path.join(__dirname, "../public/3.png"), // 👈 ICON QO‘SHILDI
+    icon: path.join(__dirname, "../public/3.png"), 
     webPreferences: {
       contextIsolation: true,
       nodeIntegration: false,

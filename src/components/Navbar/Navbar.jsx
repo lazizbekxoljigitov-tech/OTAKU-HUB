@@ -3,7 +3,7 @@ import Logo from "../../../public/1.png";
 function Navbar() {
   return (
     <>
-      <div className="flex justify-center  items-center mt-[10px]  p-[20px] items-center gap-[40px] backdrop-blur-xl bg-white/10 border border-white/20 shadow-xl ">
+      <div className="flex justify-center  items-center mt-[10px]  p-[20px] items-center  ">
         <div className="flex justify-between w-full contenr  ">
           <div className="w-[25%] h-[100%]">
             <img
