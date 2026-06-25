@@ -1,22 +1,16 @@
 {
   "users": [
     {
-      "id": "TEz4N_bZV_s",
+      "id": "7QSc0cipWnw",
+      "name": "admin",
+      "password": "admin123",
+      "email": "admin@gmail.com"
+    },
+    {
+      "id": "W9zqf1ThJZI",
       "name": "ubaydulloh",
       "password": "pono0908",
-      "email": "manzura.sharipova.ru@gmail.com"
-    },
-    {
-      "id": "RwLl8baO7Hc",
-      "name": "ya",
-      "password": "ya",
-      "email": "ya@gmail.com"
-    },
-    {
-      "id": "SHiWWAbFVH4",
-      "name": "cdscb sd",
-      "password": "cbsdk",
-      "email": "cbsdkc@gmail.com"
+      "email": "laziz@gmail.com"
     }
   ],
   "animes": [],

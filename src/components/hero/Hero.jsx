@@ -21,9 +21,9 @@ const Hero = () => {
         loop={true}
         slidesPerView={1}
         spaceBetween={0}
-        speed={300}
+        speed={400}
         autoplay={{
-          delay: 2000,
+          delay: 1000,
           disableOnInteraction: false,
         }}
         className="w-full h-[490px] rounded-3xl"

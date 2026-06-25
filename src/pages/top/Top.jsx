@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import { Heart } from "lucide-react";
+import { useEffect } from "react";
+import img1 from "../login/img/one.jpg";
 
 function Top() {
   useEffect(() => {
@@ -6,7 +8,7 @@ function Top() {
   });
   return (
     <div className="w-[100%]">
-      <table className="w-full border-separate border-spacing-2">
+      <table className="w-full border-separate border-spacing-2 text-white">
         <tbody>
           <tr>
             <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 ">
@@ -25,21 +27,30 @@ function Top() {
               like
             </td>
           </tr>
-          <tr>
-            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
-              index berilsin
+          <tr className=" w-[100px]">
+            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 h-full">
+              1
             </td>
-            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
-              img berilsin
+            <td className="h-full">
+              <img
+                src={img1}
+                alt="Anime-topPhoto"
+                className="w-[140px] h-[100%] rounded-xl h-full"
+              />
             </td>
-            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
-              Yolg`izlikda daaraja ko`tarish
+            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 h-full">
+              <p className="text-[30px]">One Peice</p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima
+                deserunt eaque vero assumenda. Nihil vel, quam commodi repellat
+                esse sint necessitatibus, facilis nesciunt rerum reiciendis
+              </p>
             </td>
-            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
+            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 h-full">
               10/4
             </td>
-            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6">
-              layk bosilgan yoki yo`q`
+            <td className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-6 h-full">
+              <Heart />
             </td>
           </tr>
         </tbody>

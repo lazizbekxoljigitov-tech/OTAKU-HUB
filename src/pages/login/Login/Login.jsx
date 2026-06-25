@@ -1,3 +1,4 @@
+import gsap from "gsap";
 import {
   Eye,
   EyeClosed,
@@ -21,7 +22,6 @@ import img4 from "../img/images.jpg";
 import img1 from "../img/one.jpg";
 import img2 from "../img/two.jpg";
 import video from "../video/vq.mp4";
-import gsap from "gsap";
 
 function Login() {
   useEffect(() => {
@@ -68,7 +68,6 @@ function Login() {
       if (!password || !userName) {
         return toast.error("Iltimos barcha maydonlarni to'ldiring");
       }
-
       const res = await api.get("/users");
       const data = res.data;
 
@@ -78,6 +77,9 @@ function Login() {
 
       if (user) {
         navigate("/");
+        if (user.name == "admin" || user.password == "admin123") {
+          navigate("/admin");
+        }
       } else {
         toast.error("Login yoki password noto‘g‘ri");
       }

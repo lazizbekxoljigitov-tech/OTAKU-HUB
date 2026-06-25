@@ -1,12 +1,19 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Toaster } from "sonner";
+import AnimePlus from "../admin/Admin/animeqoshish/AnimePlus";
+import Dashboard from "../admin/Admin/Dashboard/Dashboard";
+import AdminLayout from "../admin/AdminLayout/AdminLayout";
+
+import Episode from "../admin/Admin/AnimeEpisode/Episode";
+import AdminPost from "../admin/Admin/post/AdminPost";
+import AdminStatus from "../admin/Admin/Status/AdminStatus";
 import Layout from "./Layout/Layout";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login/Login";
 import Luciy from "./pages/luc/Luciy";
-import Top from "./pages/top/Top";
 import Me from "./pages/Me/Me";
+import Top from "./pages/top/Top";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,10 +41,36 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+
+  {
+    path: "admin",
+    element: <AdminLayout />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "addanime",
+        element: <AnimePlus />,
+      },
+      {
+        path: "status",
+        element: <AdminStatus />,
+      },
+      {
+        path: "post",
+        element: <AdminPost />,
+      },
+      {
+        path: "episode",
+        element: <Episode />,
+      },
+    ],
+  },
 ]);
 
 const App = () => {
-
   return (
     <>
       <Toaster
