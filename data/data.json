@@ -11,7 +11,14 @@
       "name": "ya",
       "password": "ya",
       "email": "ya@gmail.com"
+    },
+    {
+      "id": "SHiWWAbFVH4",
+      "name": "cdscb sd",
+      "password": "cbsdk",
+      "email": "cbsdkc@gmail.com"
     }
   ],
+  "animes": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

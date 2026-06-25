@@ -7,7 +7,7 @@ function Layout() {
     <div className="app">
       <Backgraund/>
       <Navbar />
-      <div className="mt-[70px]">
+      <div className="mt-[130px]">
         <main className="contenr">
 
         <Outlet />

@@ -21,8 +21,16 @@ import img4 from "../img/images.jpg";
 import img1 from "../img/one.jpg";
 import img2 from "../img/two.jpg";
 import video from "../video/vq.mp4";
+import gsap from "gsap";
 
 function Login() {
+  useEffect(() => {
+    gsap.from("#login", {
+      y: -100,
+      opacity: 0,
+    });
+  }, []);
+
   // bular axios  blan ishlash uchun
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -87,7 +95,7 @@ function Login() {
   }, [input]);
 
   return (
-    <div className="h-screen flex justify-between  overflow-hidden">
+    <div id="login" className="h-screen flex justify-between  overflow-hidden">
       <div className="w-[40%] h-full bg-[#FF8844] flex justify-center items-center relative">
         <Swiper
           modules={[Autoplay]}
@@ -164,7 +172,9 @@ function Login() {
               <Input
                 Icon={<LockKeyhole size={20} color="white" />}
                 Label={"Enter Password"}
-                onchange={(e) => setPassword(e.target.value.toLowerCase().trim())}
+                onchange={(e) =>
+                  setPassword(e.target.value.toLowerCase().trim())
+                }
                 type={type ? "password" : "text"}
               />
 
@@ -209,12 +219,16 @@ function Login() {
               <Input
                 Icon={<User size={20} color="white" />}
                 Label={"User Name"}
-                onchange={(e) => setUserName(e.target.value.toLowerCase().trim())}
+                onchange={(e) =>
+                  setUserName(e.target.value.toLowerCase().trim())
+                }
               />
               <Input
                 Icon={<LockKeyhole size={20} color="white" />}
                 Label={"Password"}
-                onchange={(e) => setPassword(e.target.value.toLowerCase().trim())}
+                onchange={(e) =>
+                  setPassword(e.target.value.toLowerCase().trim())
+                }
                 type={type ? "password" : "text"}
               />
               <div

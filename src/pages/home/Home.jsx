@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Hero from '../../components/hero/Hero';
 
 function Home() {
   useEffect(() => {
@@ -6,10 +7,9 @@ function Home() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen flex flex-col items-center">
+    <div className="w-full  flex flex-col items-center">
       <div className="relative w-full h-[400px]">
-
-        <h1>dnxx</h1>
+        <Hero/>
       </div>
     </div>
   );
