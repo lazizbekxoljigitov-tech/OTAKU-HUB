@@ -19,7 +19,6 @@ const Ganre = () => {
 
   const [id, setId] = useState("");
 
-  console.log(id);
 
   return (
     <div className="fixed bottom-0 ">

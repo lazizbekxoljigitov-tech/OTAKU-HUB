@@ -15,8 +15,8 @@ import Luciy from "./pages/luc/Luciy";
 import Me from "./pages/Me/Me";
 import Top from "./pages/top/Top";
 import Search from "./pages/Search/Search";
-import Watch from "./pages/Watch/Watch"
-const router = createBrowserRouter([
+import Watch from "./pages/Watch/Watch";
+  const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
@@ -37,13 +37,14 @@ const router = createBrowserRouter([
         path: "me",
         element: <Me />,
       },
+
       {
         path: "search",
         element: <Search />,
       },
       {
         path: "watch/anime/id/:id",
-        element: <Watch/>
+        element: <Watch />,
       },
     ],
   },

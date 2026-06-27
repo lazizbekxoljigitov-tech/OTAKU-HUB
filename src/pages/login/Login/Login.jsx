@@ -44,10 +44,11 @@ function Login() {
       return;
     }
     const newUser = {
-      id: Date.now(),
+      id: crypto.randomUUID(),
       name: userName,
       password: password,
       email: email,
+      time: new Date().toISOString(),
     };
 
     try {

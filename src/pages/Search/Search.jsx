@@ -118,7 +118,7 @@ function Search() {
                     <TrendingUp />
                     {item.rating}
                   </p>
-                  <p className={`text-[14px] w-[180px] truncate font-medium overflow-auto `}>
+                  <p className={`text-[14px] w-[200px] truncate font-medium overflow-auto `}>
                     {item.caption}
                   </p>
                 </div>
