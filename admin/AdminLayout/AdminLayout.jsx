@@ -8,11 +8,11 @@ function AdminLayout() {
     <div className="flex gap-[10px] flex-row">
       <Backgraund />
       <Navbar />
-      <main className="flex w-[100%] flex-col">
+      <main className="flex w-[100%] flex-col pl-[300px]">
         <div className="head w-full">
           <Head />
         </div>
-        <div className="mt-[30px]">
+        <div className="mt-[30px] pr-[20px]">
           <Outlet />
         </div>
       </main>

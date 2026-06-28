@@ -5,7 +5,6 @@ import AnimePlus from "../admin/Admin/animeqoshish/AnimePlus";
 import Dashboard from "../admin/Admin/Dashboard/Dashboard";
 import AdminLayout from "../admin/AdminLayout/AdminLayout";
 
-import Episode from "../admin/Admin/AnimeEpisode/Episode";
 import AdminPost from "../admin/Admin/post/AdminPost";
 import AdminStatus from "../admin/Admin/Status/AdminStatus";
 import Layout from "./Layout/Layout";
@@ -16,7 +15,7 @@ import Me from "./pages/Me/Me";
 import Top from "./pages/top/Top";
 import Search from "./pages/Search/Search";
 import Watch from "./pages/Watch/Watch";
-  const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
@@ -72,10 +71,6 @@ import Watch from "./pages/Watch/Watch";
       {
         path: "post",
         element: <AdminPost />,
-      },
-      {
-        path: "episode",
-        element: <Episode />,
       },
     ],
   },
