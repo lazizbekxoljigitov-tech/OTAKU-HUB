@@ -1,11 +1,13 @@
-import { Clock, CalendarRange,Play, TrendingUp } from "lucide-react";
+import { CalendarRange, Play, TrendingUp } from "lucide-react";
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { api } from "../../hooks/axios";
-import Loading from '../Loading/Loaing';
+import Loading from "../Loading/Loaing";
 const Hero = () => {
+  const { id } = useParams();
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   async function getAnime() {
@@ -23,12 +25,9 @@ const Hero = () => {
     getAnime();
   }, []);
 
-
-
-
   return (
     <div className="w-[100%]  h-[480px] p-[20px] rounded-4xl bg-white/6 backdrop-blur-lg border border-white/20 rounded-xl  ">
-      {loading ? <Loading/> : ''}
+      {loading ? <Loading /> : ""}
       <Swiper
         loop={data.length > 3}
         modules={[Autoplay]}
@@ -41,9 +40,6 @@ const Hero = () => {
         }}
         className="w-full h-[490px] rounded-3xl"
       >
-
-
-        
         {data.map((item) => {
           return (
             <SwiperSlide className="h-full flex rounded-4xl">
@@ -57,7 +53,7 @@ const Hero = () => {
                   <h1 className="text-[50px] text-white font-bold">
                     {item.title}
                   </h1>
-                  <p className="text-white ">{item.caption}</p>
+                  <p className="text-white h-[150px]">{item.caption}</p>
                   <div className="flex gap-[20px] items-center">
                     <div className="flex gap-[20px]">
                       <div className="flex gap-[7px] rounded-4xl bg-white/6 backdrop-blur-lg border border-white/20 rounded-xl p-[6px]">
@@ -69,7 +65,7 @@ const Hero = () => {
                         <p className="text-white">{item.episodes}</p>
                       </div>
                       <div className="flex gap-[7px] rounded-4xl bg-white/6 backdrop-blur-lg border border-white/20 rounded-xl p-[6px]">
-                        <CalendarRange  color="white" />
+                        <CalendarRange color="white" />
                         <p className="text-white">{item.year}</p>
                       </div>
                     </div>
@@ -81,6 +77,7 @@ const Hero = () => {
                       Anime About
                     </NavLink>
                     <NavLink
+                      to={`watch/anime/id/${item.id}`}
                       className={
                         "text-[20px] text-white border-white border-[0.1px] p-[10px] rounded-4xl cursor-pointer transition duration-200 hover:bg-amber-600 "
                       }
